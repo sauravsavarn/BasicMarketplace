@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basic Marketplace</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <h1>Basic Marketplace</h1>
+        <!-- this div will hold the wallet address
+        when using the metamast -->
+        <div id="wallet"></div>
+        <div>
+            <h2>Add new item</h2>
+            <div>
+                <input type="text" id="new_itemname" placeholder="Item name.." />
+                <input type="text" id="new_askingprice" placeholder="Asking price.." />
+                <div>
+                    <button type="button" class="btn_add">Add Item</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- the below div will show all the items we have in our market place -->
+        <div>
+`           <h2>All Items</h2>
+            <div id="allItems">
+                <!-- load all items here -->
+            </div>
+
+            <!-- finally, defining all the templates of this item -->
+            <div id="itemTemplate"> <!-- style="display: none;">-->
+                <div class="card">
+                    <div class="container">
+                        <strong>Item Name</strong>: <span class="itemName"></span> <br/>
+                        <strong>Item Creator</strong>: <span class="itemCreator"></span> <br/>
+                        <strong>Item Owner</strong>: <span class="itemOwner"></span> <br/>
+                        <strong>Asking Price</strong>: <span class="askingPrice"></span> <br/>                        
+                        <strong>Item Status</strong>: <span class="itemStatus"></span> <br/>
+                        <button type="button" class="buy_btn" data-id="0">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="app.js"></script>
+        <!-- to connect to smartcontract as backend, adding ether.js as the middleware libs -->
+        <!-- This exposes the library as a global variable: ethers -->
+        <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="text/javascript"></script>
+    </body>
+</html>
