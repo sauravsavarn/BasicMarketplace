@@ -28,11 +28,14 @@ contract BasicMarketplace {
     
     constructor() {
         numProducts=0;    
+
+        ///add a single product at the time when this SmartContract is deployed
+        addProduct("Product 1", 1000);
     }
 
 
     //this functio nwill allow us to add a new Product to the marketplace.
-    function addProduct(string memory itemName, uint256 askingPrice) public {
+    function addProduct(string memory itemName, uint256 askingPrice) public returns(string memory) {
         Product storage product = products[numProducts]; //get the product Instance.
 
         //
@@ -55,6 +58,9 @@ contract BasicMarketplace {
 
         //
         numProducts++;
+
+        //return the added product object
+        return "{ProductId:\"numProducts\",ItemName:product.itemName,Creator:product.creator,Owner:product.owner,AskingPrice:product.askingPrice}";
     }
 
     //function to return a Single Product.
