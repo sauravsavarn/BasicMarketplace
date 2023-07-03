@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT 
 pragma solidity ^0.8.18;
-import "truffle/console.sol";
 
 contract BasicMarketplace {
     
@@ -79,8 +78,6 @@ contract BasicMarketplace {
             prodList[i]=product;
         }
 
-        console.log("===== getAllProduct =====");
-        console.log("prodList : ", prodList[0].itemName);
         //
         return prodList;
     }

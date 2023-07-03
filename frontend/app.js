@@ -23,7 +23,7 @@ App = {
         document.getElementById("wallet").innerText = "Your wallet address is: " + userAddress;
 
         // NOTE : below resourceAddress was printed when deployed the Contract BasicMarketplace locally to hardhat.
-        const resourceAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
+        const resourceAddress = "0x091988c287DD01E8A3fFF817634028977AA44c1b";
         //#############
 
         //Now instead of getting data from the sample data json file, we are going to actually pull
@@ -71,7 +71,7 @@ App = {
             //Now get the data using contract's function 'getAllProduct'.
             //Below we pull data from the smart contract and then set it up with the UI elements in 
             //the front end using getProducts functions.
-            contract.getAllProduct().then((data)=> {
+            App.contract.getAllProduct().then((data)=> {
                 console.log(data);
 
                 //
